@@ -1,0 +1,23 @@
+    Locatario:ID, CPF, Nome, Endereço, Avaliação;
+
+    Locador:ID, CPF, Nome, Endereço;
+
+    Item:LocadorID, ID, Nome, Status, Tipo;
+
+
+
+    Entidades: Locatario - Tem ID unico e pode mudar seus dados com  o tempo, 
+               Locador - Tem ID unico e pode mudar seus dados com o tempo, 
+               Item - Tem ID unico e pode mudar o status;
+
+    Value Objects: Endereço - Se um usuario mudar de endereço basta substituir,
+                   CPF - Sempre pertence a um usuario e não muda;
+
+    Aggregate Root: Aluguel
+                        Locador;
+                        Locatario;
+                        Item;
+                        Tempo de aluguel;
+                        Resumo;
+    
+    Regras do negócio: Um locador só pode alugar o item para um lacatario;
